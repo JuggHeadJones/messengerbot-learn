@@ -1,5 +1,6 @@
 'use strict'
 
+
 //start by requiring the following packages 
 
 const express = require('express')
@@ -8,6 +9,7 @@ const request = require('request')
 const app = express()        
 
 //set the port to 8000 (the port we used with ngrok )
+
 
 app.set('port', (process.env.PORT || 8000 ))
 
@@ -35,3 +37,4 @@ app.get('/webhook/', function (req, res) {
     }
     res.send('Error : wrong token');
 })
+const PAGE_ACCESS_TOKEN  = 'your generated page access token '; 
