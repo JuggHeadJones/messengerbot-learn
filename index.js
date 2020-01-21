@@ -26,7 +26,8 @@ app.listen(app.get('port'), function() {
     console.log('server running at : ', app.get('port'))
 });
 
-const FACEBOOK_VERIFY_CODE = '0123456789';
+//Put any token here like your password for example 
+const FACEBOOK_VERIFY_CODE = '030831';
 
 app.get('/webhook/', function (req, res) {
     if (req.query['hub.verify_token'] === FACEBOOK_VERIFY_CODE) {
