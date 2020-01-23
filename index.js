@@ -31,10 +31,19 @@ app.listen(app.get('port'), function() {
 //Put any token here like your password for example 
 const FACEBOOK_VERIFY_CODE = '030831';
 
-app.get('/webhook/', function (req, res) {
-    if (req.query['hub.verify_token'] === FACEBOOK_VERIFY_CODE) {
-        res.send(req.query['hub.challenge'])
-    }
-    res.send('Error : wrong token');
+app.get('/', function (req, res) {
+	res.send('Hello world, I am a chat bot')
 })
-const PAGE_ACCESS_TOKEN  = 'your generated page access token '; 
+
+// for Facebook verification
+app.get('/webhook/', function (req, res) {
+	if (req.query['hub.verify_token'] === 'my_voice_is_my_password_verify_me') {
+		res.send(req.query['hub.challenge'])
+	}
+	res.send('Error, wrong token')
+})
+
+// Spin up the server
+app.listen(app.get('port'), function() {
+	console.log('running on port', app.get('port'))
+})
