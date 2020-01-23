@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
 // Index route
-app.get('/', function (req, res) {
+app.get('https://messengerbot-learn.herokuapp.com/', function (req, res) {
 	res.send('Hello world, I am a chat bot')
 })
 
